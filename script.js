@@ -57,6 +57,46 @@
     timeline.appendChild(li);
   });
 
+  /* ---------- Render: Education ---------- */
+  const eduList = $("#eduList");
+  if (eduList) {
+    (D.education || []).forEach((e) => {
+      const item = el("div", "edu__item");
+      item.innerHTML = `
+        <span class="edu__mark">🎓</span>
+        <div>
+          <h4 class="edu__school">${esc(e.school)}</h4>
+          ${e.program ? `<p class="edu__program">${esc(e.program)}</p>` : ""}
+          <p class="edu__meta">${[e.note, e.period].filter(Boolean).map(esc).join(" · ")}</p>
+        </div>`;
+      eduList.appendChild(item);
+    });
+  }
+
+  /* ---------- Render: Shows (with generated logos) ---------- */
+  const SHOW_ICONS = {
+    building: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V5a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v16"/><path d="M19 21V11a1 1 0 0 0-1-1h-3"/><path d="M8 7h2M8 11h2M8 15h2"/></svg>',
+    pie: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 3v9h9"/></svg>',
+    rupee: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 5h10M7 9h10M14 5c2 0 3 1.5 3 3.5S15.5 12 13 12H8l7 7"/></svg>',
+    chat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.5 7.2L3 21l1.8-6.5A8 8 0 1 1 21 12Z"/><path d="M8 11h8M8 14h5"/></svg>'
+  };
+  const showGrid = $("#showGrid");
+  if (showGrid) {
+    (D.shows || []).forEach((s) => {
+      const card = el("article", "show-card reveal");
+      card.style.setProperty("--show", s.accent || "var(--accent)");
+      card.innerHTML = `
+        <div class="show-card__badge">
+          <span class="show-card__mark">${SHOW_ICONS[s.icon] || ""}</span>
+          <span class="show-card__abbr">${esc(s.abbr || "")}</span>
+        </div>
+        <h3 class="show-card__name">${esc(s.name)}</h3>
+        ${s.desc ? `<p class="show-card__desc">${esc(s.desc)}</p>` : ""}
+        <span class="show-card__role">Producer · NDTV Profit</span>`;
+      showGrid.appendChild(card);
+    });
+  }
+
   /* ---------- Render: Publications ---------- */
   const pubGrid = $("#pubGrid");
   (D.publications || []).forEach((p) => {

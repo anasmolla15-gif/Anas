@@ -13,23 +13,50 @@ window.SITE_DATA = {
     {
       role: "Markets Writer",
       org: "NDTV Profit",
-      period: "Jun 2023 — Present",
+      period: "Aug 2025 — Present",
       current: true,
       location: "India",
       points: [
         "Cover equity markets, listed companies, earnings and major corporate deals.",
-        "Report on the IT sector's AI pivot and big-ticket M&A across banking and finance.",
+        "Report on the IT sector's AI pivot, Big Tech and big-ticket M&A.",
         "Write timely, accurate copy under daily newsroom deadlines."
       ]
+    },
+    {
+      role: "TV News Producer",
+      org: "NDTV Profit",
+      period: "Jun 2023 — Aug 2025",
+      current: false,
+      location: "India",
+      points: [
+        "Produced flagship business shows — Know Your Company, The Mutual Fund Show, Your Money Matters and Talking Point.",
+        "Built rundowns, scripts and on-screen graphics, and coordinated guests and live segments.",
+        "Turned market and corporate developments into clear, broadcast-ready television."
+      ]
     }
-    // ,{
-    //   role: "Your previous role",
-    //   org: "Previous publication",
-    //   period: "Year — Year",
-    //   current: false,
-    //   location: "City",
-    //   points: ["What you did there.", "Another highlight."]
-    // }
+  ],
+
+  /* -----------------------------------------------------------------------
+     EDUCATION
+  ----------------------------------------------------------------------- */
+  education: [
+    {
+      school: "Indian Institute of Journalism & New Media (IIJNM)",
+      program: "Postgraduate Diploma in Journalism",
+      period: "",            // add your years, e.g. "2021 — 2022"
+      note: "Bengaluru"
+    }
+  ],
+
+  /* -----------------------------------------------------------------------
+     SHOWS PRODUCED — each gets a generated logo. `accent` sets its colour,
+     `icon` picks the glyph (building | pie | rupee | chat).
+  ----------------------------------------------------------------------- */
+  shows: [
+    { name: "Know Your Company",   abbr: "KYC", icon: "building", accent: "#7a4dff", desc: "Deep-dives into the businesses behind the tickers." },
+    { name: "The Mutual Fund Show", abbr: "MF",  icon: "pie",      accent: "#e23e6d", desc: "Making sense of mutual funds and investing." },
+    { name: "Your Money Matters",  abbr: "₹",   icon: "rupee",    accent: "#0fa98f", desc: "Personal finance, decoded." },
+    { name: "Talking Point",       abbr: "TP",  icon: "chat",     accent: "#3563e9", desc: "The day's big market conversation." }
   ],
 
   /* -----------------------------------------------------------------------
