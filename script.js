@@ -210,7 +210,7 @@
     if (!canvas || !canvas.getContext) return;
     const ctx = canvas.getContext("2d");
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    let w, h, dpr, nodes = [], chart = [], gap = 26, off = 0, raf = 0;
+    let w, h, dpr, nodes = [], raf = 0;
 
     const accentRGB = () => {
       const hex = (getComputedStyle(document.documentElement).getPropertyValue("--accent").trim() || "#7a4dff").replace("#", "");
@@ -218,48 +218,6 @@
       const i = parseInt(n, 16);
       return [(i >> 16) & 255, (i >> 8) & 255, i & 255];
     };
-    const band = () => [h * 0.66, h * 0.95];   // [top, bottom] of the chart strip
-
-    function seedChart() {
-      gap = 26 * dpr;
-      const [top, bot] = band();
-      const cols = Math.ceil(w / gap) + 3;
-      let y = (top + bot) / 2;
-      chart = [];
-      for (let i = 0; i < cols; i++) {
-        y += (Math.random() - 0.5) * 22 * dpr;
-        y = Math.max(top, Math.min(bot, y));
-        chart.push(y);
-      }
-    }
-
-    function drawChart(r, g, b) {
-      const [top, bot] = band();
-      off += 0.45 * dpr;
-      if (off >= gap) {
-        off -= gap; chart.shift();
-        let y = chart[chart.length - 1] + (Math.random() - 0.5) * 22 * dpr;
-        chart.push(Math.max(top, Math.min(bot, y)));
-      }
-      // area fill
-      ctx.beginPath();
-      chart.forEach((y, i) => { const x = i * gap - off; i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); });
-      ctx.lineTo((chart.length - 1) * gap - off, h); ctx.lineTo(-gap, h); ctx.closePath();
-      ctx.fillStyle = `rgba(${r},${g},${b},0.09)`; ctx.fill();
-      // line
-      ctx.beginPath();
-      chart.forEach((y, i) => { const x = i * gap - off; i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); });
-      ctx.strokeStyle = `rgba(${r},${g},${b},0.5)`; ctx.lineWidth = 1.6 * dpr; ctx.stroke();
-      // candlesticks
-      const bw = 7 * dpr;
-      for (let i = 1; i < chart.length - 1; i += 3) {
-        const x = i * gap - off, o = chart[i - 1], c = chart[i], up = c <= o;
-        ctx.strokeStyle = `rgba(${r},${g},${b},0.32)`; ctx.lineWidth = dpr;
-        ctx.beginPath(); ctx.moveTo(x, Math.min(o, c) - 7 * dpr); ctx.lineTo(x, Math.max(o, c) + 7 * dpr); ctx.stroke();
-        ctx.fillStyle = up ? "rgba(16,185,129,0.32)" : "rgba(239,68,68,0.32)";
-        ctx.fillRect(x - bw / 2, Math.min(o, c), bw, Math.max(2 * dpr, Math.abs(c - o)));
-      }
-    }
 
     function resize() {
       dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -272,14 +230,12 @@
         x: Math.random() * w, y: Math.random() * h,
         vx: (Math.random() - 0.5) * 0.28 * dpr, vy: (Math.random() - 0.5) * 0.28 * dpr
       }));
-      seedChart();
     }
 
     function frame() {
       const [r, g, b] = accentRGB();
       const maxD = 132 * dpr;
       ctx.clearRect(0, 0, w, h);
-      drawChart(r, g, b);
       for (let i = 0; i < nodes.length; i++) {
         const p = nodes[i];
         p.x += p.vx; p.y += p.vy;
