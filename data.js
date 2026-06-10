@@ -89,36 +89,36 @@ window.SITE_DATA = {
       summary: "How surging AI demand has sent RAM prices up threefold in three months, making your next PC upgrade much costlier."
     },
     {
-      title: "Indian IT giants are selling AI like there's no tomorrow",
+      title: "What's 'SaaSpocalypse'? Why Indian IT Stocks Crashed After Anthropic's Mega Release — A Story In Infographics",
       outlet: "NDTV Profit",
       tag: "IT",
-      date: "2026",
-      url: "",
-      summary: "How TCS, Infosys and HCLTech are repositioning their business around artificial intelligence — and what the strategic pivot means."
-    },
-    {
-      title: "The biggest cross-border deals in BFSI in 2025",
-      outlet: "NDTV Profit",
-      tag: "Banking",
       date: "2025",
-      url: "",
-      summary: "A look at the year's landmark banking and financial-services deals, including MUFG–Shriram Finance and RBL Bank–Emirates NBD."
+      url: "https://www.ndtvprofit.com/technology/whats-saaspocalypse-why-indian-it-stocks-crashed-after-anthropics-mega-release-a-story-in-infographics-10944734",
+      summary: "A visual, infographic-led breakdown of the 'SaaSpocalypse' — why Indian IT stocks tumbled in the wake of Anthropic's major model release."
     },
     {
-      title: "US–India trade deal: heavy-duty motorcycles set to enter the Indian market",
+      title: "From $2 Trillion To Near $4 Trillion: Inside Google's AI-Led Glow Up In Six Months",
       outlet: "NDTV Profit",
-      tag: "Trade",
+      tag: "Tech",
       date: "2025",
-      url: "",
-      summary: "Reporting on the trade-deal provisions opening India's market to heavy-duty motorcycles. Co-bylined with Rishabh Bhatnagar."
+      url: "https://www.ndtvprofit.com/technology/gemini-30-boost-from-2-trillion-to-almost-4-trillioninside-googles-ai-led-glow-up-in-six-months-9696986",
+      summary: "How Google's market value climbed from $2 trillion toward $4 trillion in six months, powered by its AI push and Gemini 3.0."
     },
     {
-      title: "Enforcement action targets assets linked to Reliance Infrastructure",
+      title: "Breaking The Stranglehold? Google Aims To End Nvidia's Chip Dominance",
+      outlet: "NDTV Profit",
+      tag: "Tech",
+      date: "2025",
+      url: "https://www.ndtvprofit.com/technology/google-aims-to-end-nvidea-dominance-in-chip-making-race-with-tpus-9703937",
+      summary: "Google's bid to challenge Nvidia's grip on AI chips with its own TPUs — and what it could mean for the chip-making race."
+    },
+    {
+      title: "Rupee At 90: How India's Currency Has Weathered 50 Years Of Global And Domestic Storms",
       outlet: "NDTV Profit",
       tag: "Markets",
       date: "2025",
-      url: "",
-      summary: "Coverage of enforcement proceedings and the assets under scrutiny. Co-bylined."
+      url: "https://www.ndtvprofit.com/markets/rupee-at-90-how-indias-currency-has-weathered-50-years-of-global-and-domestic-storms-9742985",
+      summary: "Marking the rupee at 90 to the dollar: how India's currency has weathered five decades of global and domestic shocks."
     }
   ],
 
