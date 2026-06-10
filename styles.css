@@ -73,25 +73,6 @@ a { color: inherit; text-decoration: none; }
 }
 .bg-blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; }
 :root[data-theme="light"] .bg-blob { opacity: 0.3; }
-
-/* faint market ticker tapes */
-.bg-ticker {
-  position: absolute; left: 0; right: 0; overflow: hidden; white-space: nowrap;
-  font-family: var(--mono); font-size: 0.82rem; letter-spacing: 0.02em; opacity: 0.5;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-          mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-}
-:root[data-theme="light"] .bg-ticker { opacity: 0.38; }
-.bg-ticker--top { top: 15%; }
-.bg-ticker--bottom { bottom: 20%; }
-.bg-ticker__row { display: inline-block; will-change: transform; }
-.bg-ticker--top .bg-ticker__row { animation: tickerL 70s linear infinite; }
-.bg-ticker--bottom .bg-ticker__row { animation: tickerR 90s linear infinite; }
-@keyframes tickerL { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@keyframes tickerR { from { transform: translateX(-50%); } to { transform: translateX(0); } }
-.tick { margin-right: 36px; color: var(--muted); }
-.tick--up { color: #10b981; }
-.tick--down { color: #ef4444; }
 .bg-blob--1 { width: 44vw; height: 44vw; left: -10vw; top: -8vw; background: radial-gradient(circle, var(--accent), transparent 64%); animation: floatA 24s ease-in-out infinite; }
 .bg-blob--2 { width: 40vw; height: 40vw; right: -12vw; bottom: -10vw; background: radial-gradient(circle, var(--accent-2), transparent 64%); animation: floatB 30s ease-in-out infinite; }
 @keyframes floatA { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(6vw, 5vh) scale(1.12); } }
@@ -109,7 +90,7 @@ a { color: inherit; text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   html { scroll-behavior: auto; }
-  .bg-blob, .bg-ticker__row { animation: none !important; }
+  .bg-blob { animation: none !important; }
 }
 
 /* ---------- Navigation ---------- */

@@ -203,27 +203,7 @@
   }
 
   /* ---------- Background: AI neural net + market chart ---------- */
-  renderTickers();
   initNeuralBackground();
-
-  function renderTickers() {
-    const quotes = [
-      ["SENSEX", "▲ 0.74%"], ["NIFTY 50", "▲ 0.62%"], ["TCS", "▼ 1.10%"], ["INFOSYS", "▲ 0.90%"],
-      ["RELIANCE", "▲ 0.41%"], ["HDFC BANK", "▼ 0.28%"], ["RUPEE", "89.8/$"], ["BRENT", "$74.2"],
-      ["GOLD", "▲ 0.53%"], ["NIFTY IT", "▼ 1.42%"], ["SBIN", "▲ 1.24%"], ["NIFTY BANK", "▲ 0.50%"],
-      ["NVIDIA", "▲ 2.10%"], ["ALPHABET", "▲ 1.30%"], ["SENSEX VIX", "▼ 0.80%"]
-    ];
-    const html = quotes.map(([sym, val]) => {
-      const cls = val.includes("▲") ? "tick--up" : val.includes("▼") ? "tick--down" : "";
-      return `<span class="tick"><b>${sym}</b> <span class="${cls}">${val}</span></span>`;
-    }).join("");
-    const a = $("#tickerA"), b = $("#tickerB");
-    if (a) a.innerHTML = html + html;                                    // duplicated for seamless loop
-    if (b) b.innerHTML = quotes.slice().reverse().map(([sym, val]) => {
-      const cls = val.includes("▲") ? "tick--up" : val.includes("▼") ? "tick--down" : "";
-      return `<span class="tick"><b>${sym}</b> <span class="${cls}">${val}</span></span>`;
-    }).join("").repeat(2);
-  }
 
   function initNeuralBackground() {
     const canvas = document.getElementById("bgCanvas");
