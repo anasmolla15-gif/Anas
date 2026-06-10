@@ -70,8 +70,7 @@ window.SITE_DATA = {
       name: "NDTV Profit",
       role: "Markets Writer",
       note: "Business & financial news",
-      url: "https://www.ndtvprofit.com/authors/anas-ali-6606",
-      logo: "assets/ndtv-profit.png"
+      url: "https://www.ndtvprofit.com/authors/anas-ali-6606"
     }
     // ,{ name: "Outlet name", role: "Contributor", note: "What you covered", url: "" }
   ],
