@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anas Ali — Journalist & Writer</title>
+  <meta name="description" content="Anas Ali — business and financial journalist at NDTV Profit. CV, portfolio and an archive of published work." />
+  <meta name="author" content="Anas Ali" />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:title" content="Anas Ali — Journalist & Writer" />
+  <meta property="og:description" content="Business and financial journalist at NDTV Profit. CV, portfolio and published work." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== Navigation ===== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="#top" class="nav__brand">Anas<span>Ali</span></a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <span class="theme-toggle__icon">◐</span>
+        </button>
+        <button class="nav__burger" id="navBurger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="top">
+    <div class="container hero__inner">
+      <p class="hero__eyebrow reveal">Journalist · Business &amp; Finance</p>
+      <h1 class="hero__title reveal">Anas Ali</h1>
+      <p class="hero__lede reveal">
+        I report on markets, companies and the economy at
+        <strong>NDTV Profit</strong>. This is my CV, my portfolio,
+        and an archive of everything I&rsquo;ve written.
+      </p>
+      <div class="hero__cta reveal">
+        <a href="#work" class="btn btn--primary">Read my work</a>
+        <a href="#contact" class="btn btn--ghost">Get in touch</a>
+      </div>
+      <div class="hero__stats reveal">
+        <div class="stat"><span class="stat__num" data-count="2023">2023</span><span class="stat__label">At NDTV Profit since</span></div>
+        <div class="stat"><span class="stat__num" data-count="0" id="articleCount">0</span><span class="stat__label">Stories archived</span></div>
+        <div class="stat"><span class="stat__num" data-count="0" id="pubCount">0</span><span class="stat__label">Publications</span></div>
+      </div>
+    </div>
+    <div class="hero__scroll">Scroll <span>↓</span></div>
+  </section>
+
+  <main>
+    <!-- ===== About ===== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__index">01</span>
+          <h2 class="section__title">About</h2>
+        </div>
+        <div class="about__grid">
+          <div class="about__lead reveal">
+            <p>
+              I&rsquo;m a journalist based in India covering business, markets and the
+              wider economy. Since <strong>June 2023</strong> I&rsquo;ve been part of the
+              newsroom at <strong>NDTV Profit</strong>, where I write and report on the
+              companies, policies and numbers shaping the day.
+            </p>
+            <p>
+              I care about clear writing, accurate numbers and stories that help
+              readers actually understand what&rsquo;s going on &mdash; not just what
+              happened, but why it matters.
+            </p>
+          </div>
+          <aside class="about__card reveal">
+            <h3>At a glance</h3>
+            <ul class="about__facts">
+              <li><span>Role</span> Business &amp; Finance Journalist</li>
+              <li><span>Currently</span> NDTV Profit</li>
+              <li><span>Since</span> June 2023</li>
+              <li><span>Beats</span> Markets · Companies · Economy</li>
+              <li><span>Based in</span> India</li>
+            </ul>
+            <a class="about__resume" href="#" id="printResume">↧ Save / print CV</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Experience ===== -->
+    <section class="section section--alt" id="experience">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__index">02</span>
+          <h2 class="section__title">Experience</h2>
+        </div>
+        <ol class="timeline" id="timeline"><!-- injected by script.js --></ol>
+      </div>
+    </section>
+
+    <!-- ===== Publications ===== -->
+    <section class="section" id="publications">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__index">03</span>
+          <h2 class="section__title">Publications &amp; bylines</h2>
+        </div>
+        <p class="section__intro reveal">Outlets I&rsquo;ve written for and contributed to.</p>
+        <div class="pub-grid" id="pubGrid"><!-- injected by script.js --></div>
+      </div>
+    </section>
+
+    <!-- ===== Work / Portfolio ===== -->
+    <section class="section section--alt" id="work">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__index">04</span>
+          <h2 class="section__title">Selected work</h2>
+        </div>
+        <p class="section__intro reveal">
+          A living archive of my stories. Filter by topic or search for a headline.
+        </p>
+
+        <div class="work__controls reveal">
+          <div class="filters" id="filters"><!-- injected by script.js --></div>
+          <div class="search">
+            <input type="search" id="searchInput" placeholder="Search headlines…" aria-label="Search articles" />
+          </div>
+        </div>
+
+        <div class="work-grid" id="workGrid"><!-- injected by script.js --></div>
+        <p class="work__empty" id="workEmpty" hidden>No stories match that filter yet.</p>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section class="section section--contact" id="contact">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__index">05</span>
+          <h2 class="section__title">Get in touch</h2>
+        </div>
+        <div class="contact__inner reveal">
+          <p class="contact__lede">
+            For story tips, commissions, or just to say hello &mdash; my inbox is open.
+          </p>
+          <a class="contact__mail" href="mailto:anasmolla15@gmail.com">anasmolla15@gmail.com</a>
+          <div class="contact__socials" id="socials"><!-- injected by script.js --></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year"></span> Anas Ali</span>
+      <span class="footer__made">Built as a living portfolio · <a href="#top">Back to top ↑</a></span>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
