@@ -42,15 +42,15 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background: var(--bg); transition: background 0.4s ease; }
 body {
-  background: var(--bg);
+  background: transparent;
   color: var(--text);
   font-family: var(--sans);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  transition: background 0.4s ease, color 0.4s ease;
+  transition: color 0.4s ease;
 }
 /* signature gradient hairline across the very top */
 body::before {
@@ -58,7 +58,25 @@ body::before {
   background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent));
 }
 a { color: inherit; text-decoration: none; }
-.container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(20px, 5vw, 48px); }
+.container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(20px, 5vw, 48px); position: relative; z-index: 1; }
+
+/* ---------- Generative tech/AI background ---------- */
+.bg-art { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+#bgCanvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.6; }
+:root[data-theme="light"] #bgCanvas { opacity: 0.42; }
+.bg-grid {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--text) 14%, transparent) 1px, transparent 0);
+  background-size: 46px 46px; opacity: 0.4;
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 25%, transparent 75%);
+          mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 25%, transparent 75%);
+}
+.bg-blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.4; }
+:root[data-theme="light"] .bg-blob { opacity: 0.22; }
+.bg-blob--1 { width: 44vw; height: 44vw; left: -10vw; top: -8vw; background: radial-gradient(circle, var(--accent), transparent 64%); animation: floatA 24s ease-in-out infinite; }
+.bg-blob--2 { width: 40vw; height: 40vw; right: -12vw; bottom: -10vw; background: radial-gradient(circle, var(--accent-2), transparent 64%); animation: floatB 30s ease-in-out infinite; }
+@keyframes floatA { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(6vw, 5vh) scale(1.12); } }
+@keyframes floatB { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-5vw, -4vh) scale(1.1); } }
 
 /* mono label helper look */
 .hero__eyebrow, .section__index, .work-card__tag, .work-card__date,
@@ -69,7 +87,11 @@ a { color: inherit; text-decoration: none; }
 /* ---------- Reveal animation ---------- */
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1); }
 .reveal.is-in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+  .bg-blob { animation: none !important; }
+}
 
 /* ---------- Navigation ---------- */
 .nav { position: fixed; inset: 4px 0 auto 0; z-index: 50; transition: background 0.3s ease, box-shadow 0.3s ease; }
@@ -132,7 +154,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- Sections ---------- */
 .section { padding: clamp(70px, 11vw, 120px) 0; }
-.section--alt { background: var(--bg-alt); border-top: 1.5px solid var(--line); border-bottom: 1.5px solid var(--line); }
+.section--alt { background: color-mix(in srgb, var(--bg-alt) 82%, transparent); border-top: 1.5px solid var(--line); border-bottom: 1.5px solid var(--line); }
 .section__head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px; }
 .section__index { color: var(--accent); font-size: 0.95rem; font-weight: 700; }
 .section__title { font-family: var(--display); font-weight: 700; font-size: clamp(1.9rem, 5vw, 3.1rem); letter-spacing: -0.03em; text-transform: uppercase; }
@@ -230,7 +252,7 @@ a.work-card:hover { transform: translate(-4px, -4px); box-shadow: var(--shadow-h
 .work__more { text-align: center; margin-top: 44px; }
 
 /* ---------- Contact ---------- */
-.section--contact { text-align: center; background: var(--bg-alt); border-top: 1.5px solid var(--line); }
+.section--contact { text-align: center; background: color-mix(in srgb, var(--bg-alt) 82%, transparent); border-top: 1.5px solid var(--line); }
 .section--contact .section__head { justify-content: center; }
 .contact__inner { display: flex; flex-direction: column; align-items: center; gap: 18px; margin-top: 24px; }
 .contact__lede { color: var(--muted); max-width: 460px; font-size: 1.1rem; }
@@ -267,7 +289,7 @@ a.work-card:hover { transform: translate(-4px, -4px); box-shadow: var(--shadow-h
 
 /* ---------- Print (CV export) ---------- */
 @media print {
-  body::before, .nav, .hero__scroll, .hero__cta, .hero__portrait, .nav__actions, .work__controls, .theme-toggle, .footer__made, .about__resume { display: none !important; }
+  body::before, .bg-art, .nav, .hero__scroll, .hero__cta, .hero__portrait, .nav__actions, .work__controls, .theme-toggle, .footer__made, .about__resume { display: none !important; }
   body { background: #fff; color: #000; }
   .section, .hero { padding: 24px 0; }
   .work-card, .timeline__card, .pub-card, .about__card { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
