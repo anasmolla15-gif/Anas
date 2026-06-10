@@ -200,6 +200,7 @@ a.work-card:hover { transform: translate(-4px, -4px); box-shadow: var(--shadow-h
 .work-card__arrow { color: var(--accent); font-weight: 700; font-size: 0.8rem; font-family: var(--mono); }
 .work-card__arrow--muted { color: var(--muted); }
 .work__empty { color: var(--muted); text-align: center; padding: 40px 0; font-family: var(--mono); }
+.work__more { text-align: center; margin-top: 44px; }
 
 /* ---------- Contact ---------- */
 .section--contact { text-align: center; background: var(--bg-alt); border-top: 1.5px solid var(--line); }

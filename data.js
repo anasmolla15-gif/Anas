@@ -41,7 +41,7 @@ window.SITE_DATA = {
       name: "NDTV Profit",
       role: "Markets Writer",
       note: "Business & financial news",
-      url: "https://www.ndtvprofit.com"
+      url: "https://www.ndtvprofit.com/authors/anas-ali-6606"
     }
     // ,{ name: "Outlet name", role: "Contributor", note: "What you covered", url: "" }
   ],
@@ -127,7 +127,7 @@ window.SITE_DATA = {
   ----------------------------------------------------------------------- */
   socials: [
     { label: "Email", url: "mailto:anasmolla15@gmail.com" },
-    { label: "NDTV Profit", url: "https://www.ndtvprofit.com" }
+    { label: "NDTV Profit", url: "https://www.ndtvprofit.com/authors/anas-ali-6606" }
     // ,{ label: "X / Twitter", url: "https://x.com/yourhandle" }
     // ,{ label: "LinkedIn", url: "https://linkedin.com/in/yourhandle" }
   ]
