@@ -11,15 +11,15 @@ window.SITE_DATA = {
   ----------------------------------------------------------------------- */
   experience: [
     {
-      role: "Business & Finance Journalist",
+      role: "Markets Writer",
       org: "NDTV Profit",
       period: "Jun 2023 — Present",
       current: true,
       location: "India",
       points: [
-        "Report on markets, listed companies, earnings and the broader economy.",
-        "Write timely, accurate copy under daily newsroom deadlines.",
-        "Track corporate announcements, policy moves and their market impact."
+        "Cover equity markets, listed companies, earnings and major corporate deals.",
+        "Report on the IT sector's AI pivot and big-ticket M&A across banking and finance.",
+        "Write timely, accurate copy under daily newsroom deadlines."
       ]
     }
     // ,{
@@ -39,7 +39,7 @@ window.SITE_DATA = {
   publications: [
     {
       name: "NDTV Profit",
-      role: "Staff Journalist",
+      role: "Markets Writer",
       note: "Business & financial news",
       url: "https://www.ndtvprofit.com"
     }
@@ -53,30 +53,49 @@ window.SITE_DATA = {
      - date: any readable date string.
      - summary: 1–2 lines (optional).
   ----------------------------------------------------------------------- */
+  // NOTE: NDTV Profit blocks automated crawlers, so these were identified
+  // from public references — add the exact article URLs in the `url` fields
+  // (open the piece on ndtvprofit.com and copy the link).
   articles: [
     {
-      title: "Add your first story here",
+      title: "TCS spent ~₹6,500 crore on acquisitions and saw goodwill surge — will the AI bets pay off?",
       outlet: "NDTV Profit",
-      tag: "Markets",
+      tag: "IT",
       date: "2026",
       url: "",
-      summary: "Replace this placeholder with a real headline, link and a one-line summary. Duplicate this block for each story you want to feature."
+      summary: "A deep-dive into TCS's FY26 acquisition spree and the sharp rise in goodwill, and whether the company's AI investments can generate returns."
     },
     {
-      title: "Example: a company earnings deep-dive",
+      title: "Indian IT giants are selling AI like there's no tomorrow",
       outlet: "NDTV Profit",
-      tag: "Companies",
+      tag: "IT",
+      date: "2026",
+      url: "",
+      summary: "How TCS, Infosys and HCLTech are repositioning their business around artificial intelligence — and what the strategic pivot means."
+    },
+    {
+      title: "The biggest cross-border deals in BFSI in 2025",
+      outlet: "NDTV Profit",
+      tag: "Banking",
       date: "2025",
       url: "",
-      summary: "Use the `tag` field to group stories — the filter buttons are generated automatically from whatever tags you use here."
+      summary: "A look at the year's landmark banking and financial-services deals, including MUFG–Shriram Finance and RBL Bank–Emirates NBD."
     },
     {
-      title: "Example: an economy explainer",
+      title: "US–India trade deal: heavy-duty motorcycles set to enter the Indian market",
       outlet: "NDTV Profit",
-      tag: "Economy",
-      date: "2024",
+      tag: "Trade",
+      date: "2025",
       url: "",
-      summary: "Pieces appear in the order you list them, so keep your best or newest work near the top."
+      summary: "Reporting on the trade-deal provisions opening India's market to heavy-duty motorcycles. Co-bylined with Rishabh Bhatnagar."
+    },
+    {
+      title: "Enforcement action targets assets linked to Reliance Infrastructure",
+      outlet: "NDTV Profit",
+      tag: "Markets",
+      date: "2025",
+      url: "",
+      summary: "Coverage of enforcement proceedings and the assets under scrutiny. Co-bylined."
     }
   ],
 
