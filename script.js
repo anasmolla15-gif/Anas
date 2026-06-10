@@ -49,6 +49,7 @@
         <div class="timeline__top">
           <h3 class="timeline__role">${esc(job.role)}</h3>
           ${job.current ? '<span class="badge">Current</span>' : ""}
+          ${job.logo ? `<span class="timeline__logo"><img src="${esc(job.logo)}" alt="${esc(job.org)} logo" loading="lazy" /></span>` : ""}
         </div>
         <p class="timeline__org">${esc(job.org)}${job.location ? ` · <span>${esc(job.location)}</span>` : ""}</p>
         <p class="timeline__period">${esc(job.period)}</p>
@@ -103,7 +104,9 @@
     const card = el(p.url ? "a" : "div", "pub-card reveal");
     if (p.url) { card.href = p.url; card.target = "_blank"; card.rel = "noopener"; }
     card.innerHTML = `
-      <span class="pub-card__mark">${esc(initials(p.name))}</span>
+      ${p.logo
+        ? `<span class="pub-card__mark pub-card__mark--logo"><img src="${esc(p.logo)}" alt="${esc(p.name)} logo" loading="lazy" /></span>`
+        : `<span class="pub-card__mark">${esc(initials(p.name))}</span>`}
       <span class="pub-card__name">${esc(p.name)}</span>
       <span class="pub-card__role">${esc(p.role || "")}</span>
       ${p.note ? `<span class="pub-card__note">${esc(p.note)}</span>` : ""}`;

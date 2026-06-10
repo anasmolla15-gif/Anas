@@ -13,6 +13,7 @@ window.SITE_DATA = {
     {
       role: "Markets Writer",
       org: "NDTV Profit",
+      logo: "assets/ndtv-profit.png",
       period: "Aug 2025 — Present",
       current: true,
       location: "India",
@@ -25,6 +26,7 @@ window.SITE_DATA = {
     {
       role: "TV News Producer",
       org: "NDTV Profit",
+      logo: "assets/ndtv-profit.png",
       period: "Jun 2023 — Aug 2025",
       current: false,
       location: "India",
@@ -68,7 +70,8 @@ window.SITE_DATA = {
       name: "NDTV Profit",
       role: "Markets Writer",
       note: "Business & financial news",
-      url: "https://www.ndtvprofit.com/authors/anas-ali-6606"
+      url: "https://www.ndtvprofit.com/authors/anas-ali-6606",
+      logo: "assets/ndtv-profit.png"
     }
     // ,{ name: "Outlet name", role: "Contributor", note: "What you covered", url: "" }
   ],

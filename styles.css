@@ -182,6 +182,8 @@ a { color: inherit; text-decoration: none; }
 .timeline__card { background: var(--surface); border: 1.5px solid var(--border-bold); border-radius: var(--radius); padding: 24px 26px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
 .timeline__card:hover { transform: translate(-3px, -3px); box-shadow: var(--shadow-hard); }
 .timeline__top { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.timeline__logo { margin-left: auto; background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 5px 10px; height: 32px; display: inline-flex; align-items: center; }
+.timeline__logo img { height: 100%; width: auto; object-fit: contain; display: block; }
 .timeline__role { font-family: var(--display); font-size: 1.3rem; font-weight: 700; letter-spacing: -0.01em; }
 .badge { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-ink); background: var(--accent); padding: 3px 10px; border-radius: 100px; }
 .timeline__org { color: var(--text); font-weight: 600; margin-top: 4px; }
@@ -223,6 +225,8 @@ a { color: inherit; text-decoration: none; }
 .pub-card { display: flex; flex-direction: column; gap: 4px; background: var(--surface); border: 1.5px solid var(--border-bold); border-radius: var(--radius); padding: 22px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
 a.pub-card:hover { transform: translate(-3px, -3px); box-shadow: var(--shadow-hard); }
 .pub-card__mark { width: 44px; height: 44px; border-radius: var(--radius); background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; font-weight: 700; font-size: 0.95rem; margin-bottom: 8px; font-family: var(--display); }
+.pub-card__mark--logo { width: auto; min-width: 44px; height: 44px; background: #fff; border: 1px solid var(--line); padding: 6px 12px; }
+.pub-card__mark--logo img { height: 100%; width: auto; object-fit: contain; display: block; }
 .pub-card__name { font-family: var(--display); font-weight: 700; font-size: 1.08rem; }
 .pub-card__role { color: var(--muted); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.05em; }
 .pub-card__note { color: var(--muted); font-size: 0.84rem; }
